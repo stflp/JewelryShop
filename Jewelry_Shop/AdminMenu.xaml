@@ -1,0 +1,43 @@
+﻿<Window x:Class="Jewelry_Shop.AdminMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Jewelry_Shop"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Height="450" Width="800">
+    <Window.Resources>
+        <local:ByteToImageConverter x:Key="ByteToImageConverter" />
+    </Window.Resources>
+
+    <Grid>
+        <TextBlock Text="Add New Item" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Margin="80,10,0,0"/>
+        <TextBlock Text="or" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 50, 0, 0" FontSize="30"/>
+        <TextBlock Text="Delete Existing Item" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="30" Margin="0,10,45,0"/>
+        <Button Name="AddJewelryButton" Content="Add Item" HorizontalAlignment="Left" Margin="120,0,0,30" VerticalAlignment="Bottom" Width="100" Click="AddJewelryButton_Click"/>
+        <TextBox Name="itemName" HorizontalAlignment="Left" Height="23" Margin="120,190,-110,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBlock Text="Item Name:" HorizontalAlignment="Left" Height="23" Margin="50,190,40,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+        <TextBox Name="itemPrice" HorizontalAlignment="Left" Height="23" Margin="120,230,-110,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBlock Text="Item Price:" HorizontalAlignment="Left" Height="23" Margin="50,230,28,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+
+        <Button Content="Select Image" Height="20" HorizontalAlignment="Left" Margin="250, 130, 0, 0" Click="SelectImage_Click"/>
+        <TextBox x:Name="itemImage" IsReadOnly="True" Height="20" HorizontalAlignment="Left" Margin=" 50, 130, 0, 0" Width="200"/>
+
+        <ListBox x:Name="JewelryMenu" HorizontalAlignment="Right" Margin="0, 60, 30, 60">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image Source="{Binding image, Converter={StaticResource ByteToImageConverter}}" Height="100" Width="100" />
+                        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                            <TextBlock Text="{Binding name}" FontSize="20" />
+                            <TextBlock Text="{Binding price, StringFormat=C}" FontSize="14" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Name="DeleteJewelryButton" Content="Delete Item" HorizontalAlignment="Right" Margin="0,0,120,30" VerticalAlignment="Bottom" Width="100" Click="DeleteJewelryButton_Click"/>
+
+    </Grid>
+</Window>

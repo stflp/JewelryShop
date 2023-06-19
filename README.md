@@ -18,5 +18,6 @@ Clone the repository
 Open pgAdmin 4
 Import the 'jewelryDB' database file
 Update the PostgreSQL connection strings to point to your PostgreSQL server.
-Run the application
 ```
+
+Now all that's left is to build and run the application. Enjoy!

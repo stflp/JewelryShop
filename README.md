@@ -7,16 +7,16 @@ Jewelry Shop is a C# desktop application that serves as an online platform for p
 ## Setup and Installation
 
 First, you will need to install the necesary prerequisites:
--
--Visual Studio
--PostgreSQL
--
+```
+Visual Studio
+PostgreSQL
+```
 
 Now, to run the Jewelry Shop, you must follow these steps:
--
--Clone the repository
--Open pgAdmin 4
--Import the 'jewelryDB' database file
--Update the PostgreSQL connection strings to point to your PostgreSQL server.
--Run the application
--
+```
+Clone the repository
+Open pgAdmin 4
+Import the 'jewelryDB' database file
+Update the PostgreSQL connection strings to point to your PostgreSQL server.
+Run the application
+```

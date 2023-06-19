@@ -17,6 +17,7 @@ Now, to run the Jewelry Shop, you must follow these steps:
 Clone the repository
 Open pgAdmin 4
 Import the 'jewelryDB' database file found in the Jewelry Shop subfolder
+Navigate to the Jewelry_Shop.sln file to open the project
 Update the PostgreSQL connection strings to point to your PostgreSQL server
 ```
 
